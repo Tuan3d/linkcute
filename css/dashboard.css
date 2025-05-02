@@ -1,0 +1,152 @@
+/* Dashboard Specific Styles */
+
+/* Avatar */
+.avatar {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.25rem;
+}
+
+/* Stat card icons */
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+.bg-primary-light {
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+.bg-success-light {
+    background-color: rgba(32, 201, 151, 0.1);
+}
+
+.bg-warning-light {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.bg-danger-light {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Card styles */
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.25rem;
+}
+
+.card-title {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Sidebar styles */
+.list-group-item {
+    border: none;
+    padding: 0.75rem 1rem;
+    color: #6c757d;
+    border-radius: 0.25rem !important;
+    transition: all 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+    color: var(--primary);
+}
+
+.list-group-item.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.list-group-item.active i {
+    color: white;
+}
+
+.list-group-item i {
+    color: var(--primary);
+}
+
+/* Table styles */
+.table th {
+    font-weight: 600;
+    color: #495057;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(67, 97, 238, 0.03);
+}
+
+/* No data state */
+.no-data {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Action buttons */
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    background-color: #f8f9fa;
+    border: none;
+    transition: all 0.2s ease;
+    margin-right: 0.25rem;
+}
+
+.action-btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Chart container */
+canvas {
+    max-width: 100%;
+}
+
+/* Responsive overrides */
+@media (max-width: 991.98px) {
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+} 

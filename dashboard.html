@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - YeuMoney</title>
+    <meta name="description" content="YeuMoney Dashboard - Quản lý link rút gọn và thu nhập của bạn.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-link me-2"></i>YeuMoney
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                    </li>
+                </ul>
+                <div class="d-flex" id="userControls">
+                    <!-- User controls will be inserted by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="avatar bg-primary text-white">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-0" id="userName">Người dùng</h5>
+                                <p class="text-muted mb-0" id="userEmail">user@example.com</p>
+                            </div>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="#dashboard" class="list-group-item list-group-item-action active">
+                                <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                            </a>
+                            <a href="#links" class="list-group-item list-group-item-action">
+                                <i class="fas fa-link me-2"></i> Link của tôi
+                            </a>
+                            <a href="#earnings" class="list-group-item list-group-item-action">
+                                <i class="fas fa-money-bill-wave me-2"></i> Thu nhập
+                            </a>
+                            <a href="#payouts" class="list-group-item list-group-item-action">
+                                <i class="fas fa-credit-card me-2"></i> Rút tiền
+                            </a>
+                            <a href="#referrals" class="list-group-item list-group-item-action">
+                                <i class="fas fa-users me-2"></i> Giới thiệu
+                            </a>
+                            <a href="#settings" class="list-group-item list-group-item-action">
+                                <i class="fas fa-cog me-2"></i> Cài đặt
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Liên kết nhanh</h5>
+                        <a href="#" class="btn btn-primary w-100 mb-2">
+                            <i class="fas fa-plus me-2"></i> Tạo link mới
+                        </a>
+                        <a href="#" class="btn btn-outline-primary w-100">
+                            <i class="fas fa-gift me-2"></i> Giới thiệu bạn bè
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9">
+                <!-- Welcome Banner -->
+                <div class="card mb-4 bg-primary text-white">
+                    <div class="card-body p-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="fw-bold mb-3">Chào mừng trở lại!</h2>
+                                <p class="lead mb-0">Xem thống kê, quản lý link và thu nhập của bạn.</p>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                <button class="btn btn-light">
+                                    <i class="fas fa-plus me-2"></i> Tạo link mới
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon bg-primary-light text-primary">
+                                        <i class="fas fa-link"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h6 class="text-muted mb-0">Tổng số link</h6>
+                                        <h3 class="fw-bold mb-0" id="totalLinks">0</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon bg-success-light text-success">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h6 class="text-muted mb-0">Tổng lượt click</h6>
+                                        <h3 class="fw-bold mb-0" id="totalClicks">0</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon bg-warning-light text-warning">
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h6 class="text-muted mb-0">Thu nhập</h6>
+                                        <h3 class="fw-bold mb-0" id="totalEarnings">$0.00</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Thống kê lượt click</h5>
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="chartTimeRange" data-bs-toggle="dropdown" aria-expanded="false">
+                                7 ngày qua
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="chartTimeRange">
+                                <li><a class="dropdown-item" href="#">7 ngày qua</a></li>
+                                <li><a class="dropdown-item" href="#">30 ngày qua</a></li>
+                                <li><a class="dropdown-item" href="#">90 ngày qua</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="clicksChart" height="300"></canvas>
+                    </div>
+                </div>
+
+                <!-- Recent Links Table -->
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Link gần đây</h5>
+                        <a href="#links" class="btn btn-sm btn-outline-primary">Xem tất cả</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Link gốc</th>
+                                        <th>Link rút gọn</th>
+                                        <th>Lượt click</th>
+                                        <th>Ngày tạo</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentLinksTable">
+                                    <!-- Links will be loaded here by JavaScript -->
+                                    <tr class="no-links-row">
+                                        <td colspan="5" class="text-center py-4">
+                                            <div class="no-data">
+                                                <i class="fas fa-link fa-3x mb-3 text-muted"></i>
+                                                <h5>Bạn chưa tạo link nào</h5>
+                                                <p>Hãy bắt đầu rút gọn link đầu tiên của bạn!</p>
+                                                <a href="index.html" class="btn btn-primary">Tạo link</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">YeuMoney</h5>
+                    <p>Nền tảng rút gọn link kiếm tiền hàng đầu Việt Nam.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="mt-2 mb-0">&copy; 2023 YeuMoney. Tất cả quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 
