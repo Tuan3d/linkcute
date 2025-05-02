@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Constants
-    const domain = 'yeumoney.net';
-    const apiPrefix = 'ym-';
+    const domain = 'linkcute.net';
+    const apiPrefix = 'lc-';
 
     // DOM Elements
     const longUrlInput = document.getElementById('longUrl');
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             registerModal.hide();
             
             // Show success message
-            showAlert('Đăng ký thành công! Chào mừng bạn đến với YeuMoney.', 'success');
+            showAlert('Đăng ký thành công! Chào mừng bạn đến với LinkCute.', 'success');
             
             // Update UI based on logged-in state
             updateUIForLoggedInUser(email);

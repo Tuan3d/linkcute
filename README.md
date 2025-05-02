@@ -1,6 +1,6 @@
-# YeuMoney - Nền tảng rút gọn link kiếm tiền
+# LinkCute - Nền tảng rút gọn link kiếm tiền
 
-YeuMoney là nền tảng rút gọn link giúp người dùng kiếm tiền từ việc chia sẻ các liên kết. Với giao diện dễ sử dụng và tỷ lệ chi trả cao, YeuMoney là lựa chọn tốt nhất cho những người muốn kiếm thêm thu nhập từ việc chia sẻ nội dung trực tuyến.
+LinkCute là nền tảng rút gọn link giúp người dùng kiếm tiền từ việc chia sẻ các liên kết. Với giao diện dễ sử dụng và tỷ lệ chi trả cao, LinkCute là lựa chọn tốt nhất cho những người muốn kiếm thêm thu nhập từ việc chia sẻ nội dung trực tuyến.
 
 ## Tính năng chính
 
@@ -29,4 +29,4 @@ YeuMoney là nền tảng rút gọn link giúp người dùng kiếm tiền t�
 
 ## Demo
 
-Xem trang web demo tại: [https://tuan3d.github.io/yeumoney](https://tuan3d.github.io/yeumoney) 
+Xem trang web demo tại: [https://tuan3d.github.io/linkcute](https://tuan3d.github.io/linkcute) 
